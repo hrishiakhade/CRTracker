@@ -1,31 +1,27 @@
 {
   "project_info": {
-    "project_number": "1030165352894",
-    "firebase_url": "https://push-ebdbb.firebaseio.com",
-    "project_id": "push-ebdbb",
-    "storage_bucket": "push-ebdbb.appspot.com"
+    "project_number": "225581118834",
+    "firebase_url": "https://confrooms-9b2a5.firebaseio.com",
+    "project_id": "confrooms-9b2a5",
+    "storage_bucket": "confrooms-9b2a5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1030165352894:android:a058eab6c730530a",
+        "mobilesdk_app_id": "1:225581118834:android:a058eab6c730530a",
         "android_client_info": {
           "package_name": "com.push"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1030165352894-nlfb9tigb7loqbdsmqffkuh9eqrsj62t.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "1030165352894-nlfb9tigb7loqbdsmqffkuh9eqrsj62t.apps.googleusercontent.com",
+          "client_id": "225581118834-mequjiua4foj4db3mnhi802jq886jgbl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAVbP82pKzD8V9FP5L9BXSVFxE-JAy58EQ"
+          "current_key": "AIzaSyAwL-hGlXTo_trnm3pPeTHEzesd2y1Cbcs"
         }
       ],
       "services": {

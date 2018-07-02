@@ -8,12 +8,12 @@ import {
 
 import { StackNavigator, NavigationAction, } from 'react-navigation';
 
-import Home from './Home/Home';
-import Profile from './Profile/Profile';
-import Qrscan from './QRScan/Qrscan';
-import Timeset from './Booking/Timeset';
-import Status from './Status/Status';
-
+import Home from './src/Home/Home';
+import Profile from './src/Profile/Profile';
+import Qrscan from './src/QRScan/Qrscan';
+import Timeset from './src/Booking/Timeset';
+import Status from './src/Status/Status';
+import Home_html from './src/Home/Home_html'
 
 const Navigation = StackNavigator({
  

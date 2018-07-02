@@ -14,8 +14,8 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import { StackNavigator, } from 'react-navigation';
 import * as firebase from 'firebase';
 import moment from 'moment';
-import { NetCon } from '../NetConnetion';
-
+import { NetCon } from '../NetConnection/NetConnetion';
+var styles = require("./Component/Qrscan_css");
 type Props = {};
 export default class Qrscan extends Component<Props> {
   static navigationOptions = {
@@ -33,23 +33,19 @@ export default class Qrscan extends Component<Props> {
   }
 
   componentDidMount() {
-NetCon();
+    NetCon();
 
   }
   onSuccess(e) {
-    firebase.database().ref('/CR Room/' + e.data + '/').once('value').then(function (snapshot) {
-      if (snapshot.exists()) {
-        room:e.data;
-       
-        this.nav(e.data);
+    
 
-       
-      }
-      else {
-        alert("Please Scan Valid Conference Room QR Code");
-      }
+       // this.nav(e.data);
+        this.props.navigation.navigate("Timeset", {
+          room: e.data,
+        });
 
-    });
+     
+    
 
 
   }
@@ -78,14 +74,3 @@ NetCon();
 }
 
 
-const styles = StyleSheet.create({
- 
- 
-  buttonText: {
-    fontSize: 21,
-    color: 'rgb(0,122,255)',
-  },
-  buttonTouchable: {
-    padding: 16,
-  },
-});

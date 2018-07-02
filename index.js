@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { AppRegistry, Alert, NetInfo, BackHandler } from 'react-native';
+import { AppRegistry } from 'react-native';
 import App from './App';
-import Splash from './Splash';
+import Splash from './Splash/Container/Splash';
 import * as firebase from 'firebase';
 import { YellowBox } from 'react-native';
 YellowBox.ignoreWarnings(['', 'Module RCTImageLoader']);
-import moment from 'moment';
-import { NetCon } from './NetConnetion';
+import { NetCon } from './src/NetConnection/NetConnetion';
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -23,17 +22,10 @@ class Main extends Component {
         NetCon();
         if (!firebase.apps.length) {
             firebase.initializeApp({
-                databaseURL: "https://push-ebdbb.firebaseio.com/",
+                databaseURL: "https://confrooms-9b2a5.firebaseio.com/",
             });
         }
-        // firebase.initializeApp({
-        //     databaseURL: "https://push-ebdbb.firebaseio.com/",
-        // });
-
     }
-
-
-
     render() {
 
         const { currentScreen } = this.state

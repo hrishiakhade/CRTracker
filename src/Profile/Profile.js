@@ -10,10 +10,10 @@ import {
 } from 'react-native';
 
 import {  StackNavigator,} from 'react-navigation';
-
+import Profile_html from './Profile_html'
 import { Container, Header, Left, Body, Right, Title ,Button,Content,Form, Item, Input, Label} from 'native-base';
-import { NetCon } from '../NetConnetion';
-
+import { NetCon } from '../NetConnection/NetConnetion';
+var styles=require('./Component/Profile_css');
 
 export default class Profile extends Component {
   static navigationOptions = {
@@ -73,10 +73,10 @@ else{
   render() {
     
     return (
-      
+      //<Profile_html/>
       <Container style={styles.container}>
       
-        <Image source={require('./logo.png')} style={styles.imagestyle}/>
+        <Image source={require('./Component/logo.png')} style={styles.imagestyle}/>
 <Content style={styles.content}>
         <Form >
             <Item floatingLabel>
@@ -102,34 +102,4 @@ else{
 }
 }
 
-//onPress={() => this.props.navigation.navigate("Home") }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor:'white'
-  },
-  content:{
-  
-    marginTop:10
-  },
-  button:{
-    marginTop:40,
-    alignItems:'center',
-    width:150,
-    alignSelf:'center',
-    
-  },
-  text:{
-    color:'white',
-    fontWeight:'bold',
-    fontSize:20,
-    alignSelf:'center'
-  },
-  imagestyle:{
-    marginLeft:90,
-    marginTop:30
-  },
-  label:{
-    fontSize:20
-  }
-});
+

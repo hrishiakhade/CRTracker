@@ -10,9 +10,7 @@ export function NetCon(){
                     { text: 'OK', onPress: () => BackHandler.exitApp() }
                 ]
             )
-        }else{
-            return true;
-        } 
+        }
     });
 }
 

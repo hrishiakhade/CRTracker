@@ -6,23 +6,31 @@ import {
   View,
   Image,
   Alert,
-  Keyboard,BackHandler, NetInfo
+  Keyboard,BackHandler, NetInfo,AsyncStorage
 } from 'react-native';
 
 import {  StackNavigator,} from 'react-navigation';
-
+import Profile from './Profile'
 import { Container, Header, Left, Body, Right, Title ,Button,Content,Form, Item, Input, Label} from 'native-base';
-import Profile from './Profile/Container/Profile_fn';
+import { NetCon } from '../NetConnection/NetConnetion';
+var styles=require('./Component/Profile_css');
 
-export default class Profile extends Component {
-  static navigationOptions = {
-    title: 'Conference Room Tracker',
-    headerStyle: { backgroundColor: 'green' },
-  headerTitleStyle: { color: 'white' },
-   
-  }
+export default class Profile_html extends Component {
+  
  
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+                      
+      name:'',
+      email:'',
+      mobile:'',
+               
+}
+
  
+};
+
 
   render() {
     
@@ -30,7 +38,7 @@ export default class Profile extends Component {
       
       <Container style={styles.container}>
       
-        <Image source={require('./logo.png')} style={styles.imagestyle}/>
+        <Image source={require('./Component/logo.png')} style={styles.imagestyle}/>
 <Content style={styles.content}>
         <Form >
             <Item floatingLabel>
@@ -45,7 +53,7 @@ export default class Profile extends Component {
               <Label style={styles.label}>Mobile Number</Label>
               <Input keyboardType={'phone-pad'} style={styles.label} onChangeText={(mobile) => this.setState({mobile})} value={this.state.mobile} />
             </Item>
-            <Button rounded success  style={styles.button} onPress={() => this.props.navigation.navigate("Home") } >
+            <Button rounded success  style={styles.button} onPress={new Profile().submit(this.state.name,this.state.email,this.state.mobile) }>
             <Text style={styles.text}>{'      '}Save Info</Text>
           </Button>
           </Form>
@@ -57,33 +65,3 @@ export default class Profile extends Component {
 }
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor:'white'
-  },
-  content:{
-  
-    marginTop:10
-  },
-  button:{
-    marginTop:40,
-    alignItems:'center',
-    width:150,
-    alignSelf:'center',
-    
-  },
-  text:{
-    color:'white',
-    fontWeight:'bold',
-    fontSize:20,
-    alignSelf:'center'
-  },
-  imagestyle:{
-    marginLeft:90,
-    marginTop:30
-  },
-  label:{
-    fontSize:20
-  }
-});
